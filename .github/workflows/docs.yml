@@ -51,6 +51,15 @@ jobs:
       - name: Build docs
         run: ./Scripts/build_docs.sh
 
+      - name: Root redirect → target landing page
+        run: |
+          slug="$(echo "${DOCC_TARGET}" | tr '[:upper:]' '[:lower:]')"
+          cat > docs/index.html <<EOF
+          <!doctype html><meta charset="utf-8">
+          <title>${DOCC_TARGET}</title>
+          <meta http-equiv="refresh" content="0; url=./${DOCC_TARGET}/documentation/${slug}/">
+          EOF
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs

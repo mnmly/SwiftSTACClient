@@ -1,0 +1,9 @@
+SwiftSTACClient
+Copyright 2026 mnmly
+
+This package is a Swift port of pystac-client
+(https://github.com/stac-utils/pystac-client), Copyright 2020 Element 84,
+licensed under the Apache License, Version 2.0.
+
+This package depends on SwiftSTAC (https://github.com/mnmly/SwiftSTAC),
+which is itself a Swift port of pystac (https://github.com/stac-utils/pystac).
